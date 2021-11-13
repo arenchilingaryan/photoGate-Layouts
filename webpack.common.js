@@ -12,17 +12,15 @@ module.exports = {
       filename: "main.bundle.js",
       remotes: {},
       exposes: {
-        './Input': './src/components/shared/input/input.tsx'
+        './Layouts': './src/components/Layouts.tsx'
       },
       shared: {
         ...deps,
         react: {
           singleton: true,
-          requiredVersion: deps.react,
-          eager: true
+          requiredVersion: deps.react
         },
         "react-dom": {
-          eager: true,
           singleton: true,
           requiredVersion: deps["react-dom"],
         },
@@ -32,8 +30,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[hash:8].js',
-    sourceMapFilename: '[name].[hash:8].map',
-    chunkFilename: '[id].[hash:8].js'
+    // sourceMapFilename: '[name].[hash:8].map',
+    // chunkFilename: '[id].[hash:8].js'
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
